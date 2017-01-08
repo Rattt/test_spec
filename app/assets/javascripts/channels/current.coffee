@@ -8,4 +8,5 @@ App.current = App.cable.subscriptions.create "CurrentChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
+    $("#price").text(data['message'])
     console.info data

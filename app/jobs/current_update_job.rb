@@ -1,7 +1,7 @@
 class CurrentUpdateJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
-    # Do something later
+  def perform(current)
+    ActionCable.server.broadcast "current_channel", message: current.price
   end
 end
