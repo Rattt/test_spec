@@ -1,6 +1,4 @@
 class CurrentController < ApplicationController
-  require 'net/http'
-  require 'json'
 
   def show
     @price = Current.last.price
@@ -10,4 +8,24 @@ class CurrentController < ApplicationController
       @price = Hash.from_xml(xml_content)["ValCurs"]["Valute"][9]["Value"]
     end
   end
+
 end
+
+
+
+# forse = Forsed.last
+# current = Current.last
+#
+# @value = nil
+#
+# unless current.nil?
+#   @value = current.price
+# end
+#
+# unless forse.nil?
+#   if Time.now < forse.endtime
+#     @value = forse.price
+#   else
+#     @value = current.price
+#   end
+# end
