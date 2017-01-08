@@ -11,6 +11,7 @@ gem 'rack-timeout', '~> 0.4.2'
 gem 'pg', '~> 0.19'
 gem 'redis-rails', '~> 5.0', '>= 5.0.1'
 gem 'sidekiq', '~> 4.2', '>= 4.2.7'
+gem 'crono', '~> 1.1', '>= 1.1.2'
 
 gem 'jbuilder', '~> 2.6', '>= 2.6.1'
 gem 'uglifier', '~> 3.0', '>= 3.0.4'
