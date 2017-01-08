@@ -10,14 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170107180826) do
+ActiveRecord::Schema.define(version: 20170107230043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "crono_jobs", force: :cascade do |t|
+    t.string   "job_id",            null: false
+    t.text     "log"
+    t.datetime "last_performed_at"
+    t.boolean  "healthy"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["job_id"], name: "index_crono_jobs_on_job_id", unique: true, using: :btree
+  end
+
   create_table "currents", force: :cascade do |t|
     t.string   "name",       default: "USD"
     t.float    "price"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "forseds", force: :cascade do |t|
+    t.string   "name",       default: "USD"
+    t.float    "price"
+    t.datetime "endtime"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

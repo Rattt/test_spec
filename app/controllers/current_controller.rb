@@ -3,7 +3,7 @@ class CurrentController < ApplicationController
   require 'json'
 
   def show
-    @price = Current.last
+    @price = Current.last.price
 
     if @price.nil?
       xml_content = Net::HTTP.get(URI.parse('http://www.cbr.ru/scripts/XML_daily.asp'))

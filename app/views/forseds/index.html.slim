@@ -1,0 +1,16 @@
+= link_to 'new_forsed_path', new_forsed_path
+
+table.table.table-striped.table-bordered
+  tr
+    th id
+    th name
+    th price
+
+  - @forseds.each do |forsed|
+    tr
+      td
+        = forsed.id
+      td
+        = forsed.name
+      td
+        = forsed.price

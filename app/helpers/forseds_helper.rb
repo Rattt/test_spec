@@ -1,0 +1,2 @@
+module ForsedsHelper
+end
