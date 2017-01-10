@@ -1,12 +1,13 @@
 class CurrentController < ApplicationController
 
   def show
-    @price = Current.last.price
+    current = Current.last
     forse = Forsed.last
-
-    if @price.nil?
+    if current.nil?
       xml_content = Net::HTTP.get(URI.parse('http://www.cbr.ru/scripts/XML_daily.asp'))
       @price = Hash.from_xml(xml_content)["ValCurs"]["Valute"][9]["Value"]
+    else
+      @price = current.price
     end
     unless forse.nil?
       if Time.now < forse.endtime

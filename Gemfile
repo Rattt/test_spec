@@ -28,6 +28,7 @@ gem 'simple_form', '~> 3.3', '>= 3.3.1'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
   gem 'factory_girl_rails'
   gem 'coveralls', require: false
   gem 'simplecov', require: false
