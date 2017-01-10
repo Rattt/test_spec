@@ -26,24 +26,19 @@ gem 'slim', '~> 3.0', '>= 3.0.7'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
 
 group :development, :test do
-  # Call 'byebug' anywhere in your code to drop into a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
+  gem 'coveralls', require: false
+  gem 'simplecov', require: false
 end
 
 group :development do
-  # Enable a debug toolbar to help profile your application
   gem 'rack-mini-profiler', '~> 0.10'
-
-  # Access an IRB console on exception pages or by using <%= console %>
   gem 'web-console', '~> 3.3.0'
-
-  # Get notified of file changes. Read more: https://github.com/guard/listen
   gem 'listen', '~> 3.0.5'
-
-  # Use Spring. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
