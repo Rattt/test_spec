@@ -14,7 +14,7 @@ class ForsedsController < ApplicationController
       if @forsed.save
         format.html { redirect_to forseds_url, notice: 'Добавлено' }
       else
-        format.html { render :new }
+        format.html { render 'new' }
       end
     end
 
