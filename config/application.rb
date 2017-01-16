@@ -8,8 +8,11 @@ Bundler.require(*Rails.groups)
 
 module Level3q2Testproject
   class Application < Rails::Application
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+
+    I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}')]
+    I18n.default_locale = :en
+
+    abort I18n.t('help_use') unless ENV['COMPOSE_PROJECT_NAME']
 
     # Set up logging to be the same in all environments but control the level
     # through an environment variable.
