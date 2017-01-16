@@ -1,24 +1,35 @@
-# README
+# My Task
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Common description
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## Installing
 
-* Database creation
+In order that my application worked at all machines, I use Docker and Compose.
 
-* Database initialization
 
-* How to run the test suite
+1. **We up containers**
 
-* Services (job queues, cache servers, search engines, etc.)
+    ```
+    docker-compose up
+    ```
+    
+    or for demonizing
+    ```
+    docker-compose up -d
+    ```
 
-* Deployment instructions
 
-* ...
+2. **Before**
+
+    We can run aplication with new db
+    ```
+    docker-compose run app rails db:create
+    ```
+    
+    We can test the application using
+    ```
+    docker-compose run -e "RAILS_ENV=test" app rspec
+    ```
