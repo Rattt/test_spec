@@ -26,6 +26,7 @@ gem 'slim', '~> 3.0', '>= 3.0.7'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'
